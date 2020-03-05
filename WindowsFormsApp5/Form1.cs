@@ -27,7 +27,6 @@ namespace WindowsFormsApp5
         double stepW = 0.001;
         double Ra;
         int i=0;
-        double Vanya=25;
         List<List<double>> result= new List<List<double>>();
         
         public Form1()
