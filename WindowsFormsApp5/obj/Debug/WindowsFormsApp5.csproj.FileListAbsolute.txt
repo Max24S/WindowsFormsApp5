@@ -26,3 +26,5 @@ C:\Users\maksi\Desktop\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsA
 C:\Users\maksi\Desktop\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.GenerateResource.cache
 C:\Users\maksi\Desktop\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.exe
 C:\Users\maksi\Desktop\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.pdb
+D:\Диплом\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\ClassLibraryRool.dll
+D:\Диплом\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.CopyComplete
