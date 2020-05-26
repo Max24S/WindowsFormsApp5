@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+//using System.Diagnostics;
 
 namespace WindowsFormsApp5
 {
@@ -29,12 +31,15 @@ namespace WindowsFormsApp5
         double Ra;
         double B = 2000;
         double vi = 0.3;
-        double Lb = 1000.0;
+        double Lb = 100.0;
         int index = 0;
+        int index2 = 0;
+        int index3 = 0;
        
         List<List<double>> result= new List<List<double>>();
         List<double> Xost = new List<double>();
         List<double> Aost = new List<double>();
+        List<double> pSum = new List<double>();
 
         public Form1()
         {
@@ -87,7 +92,7 @@ namespace WindowsFormsApp5
 
                 Aost.Add (((1 / Xost[j]) - Math.Sqrt((Math.Pow((1.0 / Xost[j]), 2)) - ((Math.Pow(Lb, 2)) / 4))));
 
-      
+                pSum.Add(prav._pSum);
 
                
             }
@@ -104,7 +109,20 @@ namespace WindowsFormsApp5
          
             richTextBox5.Text = Xost[index].ToString();
 
+            index2 = Aost.IndexOf(Aost.ToArray().Min());
+            RichTextBox[] arr2 = { richTextBox2, richTextBox3, richTextBox4 };
+            int Richindex2 = 0;
+            foreach (double Elem in result[index2])
+            {
+                arr2[Richindex2].Text = Elem.ToString();
 
+                Richindex2++;
+            }
+
+
+            richTextBox6.Text = Aost[index2].ToString();
+
+            richTextBox7.Text = pSum[index3].ToString();
 
         }
         double Linear(int i)
@@ -144,7 +162,22 @@ namespace WindowsFormsApp5
             }
             return W;
         }
-               
+        
+        void Writing()
+        {
+            StreamWriter f = new StreamWriter("D:\\Diplom\\Test.txt", false);
+            f.WriteLine(d);
+            f.WriteLine(t);
+            f.WriteLine(B);
+            f.WriteLine(h);
+            f.WriteLine(Gt);
+            f.WriteLine(richTextBox1.Text);
+            f.WriteLine(richTextBox2.Text);
+            f.WriteLine(richTextBox3.Text);
+            f.WriteLine(richTextBox4.Text);
+            f.Close();
+        }
+
         private void Button1_Click(object sender, EventArgs e)
 
         {
@@ -177,9 +210,10 @@ namespace WindowsFormsApp5
             richTextBox1.Text += Math.Round(C2a,3).ToString();
             W3 = C2a;
             Calculation();
-                                
+            Writing();
+            //System.Diagnostics.Process.Start(@"D:\Abaqus script\Lev_Py.exe");
         }
-                
+
         private void RichTextBox1_TextChanged(object sender, EventArgs e)
         {
 
